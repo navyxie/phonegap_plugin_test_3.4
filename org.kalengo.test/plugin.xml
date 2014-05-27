@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="org.kalengo.test"
+      version="0.1.0">
+    <name>Test</name>
+    <description>Sample PhoneGap Calendar Plugin</description>
+    <license>MIT</license>
+    <keywords>phonegap,calendar</keywords>
+
+
+    <js-module src="www/test.js" name="Test">
+        <clobbers target="KLG.test" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Test">
+                <param name="android-package" value="org.kalengo.test.Test"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/Calendar.java" target-dir="src/org/kalengo/test" />      
+     </platform>          
+</plugin>
